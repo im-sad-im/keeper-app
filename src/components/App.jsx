@@ -16,9 +16,13 @@ function App() {
    })
   }
 
+  //Delete note
   function deleteNotes(id){
-    console.log("deleted")
-    console.log(id);
+    setNotes((prevNotes)=>{
+      return(prevNotes.filter((note,index)=>{
+        return index !== id;
+      }));
+    });
   }
 
   return (
